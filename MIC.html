@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+var listai = ["a","bb","ccc","dddd"];
+var listar = [1,22,333,4444];
+
+function programa(){
+var alea = Math.floor((Math.random() * 4));
+/*var pulsado= document.respuestas.resp.onclick().value;*/
+alert(listai[alea]);
+}
+
+function reinicio(){
+var nombres = ["nombre1","cosas2","pepes","coche"];
+var alea = Math.floor((Math.random() * 4));
+var res = nombres[alea];
+document.getElementById("pregunta").value=res;	
+}
+
+function inicio(){
+	var alea = Math.floor((Math.random() * 4));
+	var res=listai[alea];
+	document.getElementById("texto").innerHTML = res;
+}
+window.onload = inicio;	
+	
+</script>
+
+</head>
+
+<body>
+<label id="texto">texto aleatorio inicial</label>
+<input type="button" onclick="reinicio()" value="INICIAR" />
+
+<div id="preguntas">
+<input type="text" id="pregunta" onclick="programa()" readonly />
+</div>
+
+<div name="respuestas">
+<input  type="button" id="1" value="uno" onclick="programa()">
+<input  type="button" id="2" value="dos" onclick="programa()">
+<input  type="button" id="3" value="tres" onclick="programa()">
+<input  type="button" id="4" value="cuatro" onclick="programa()">
+</div>
+
+</body>
+
+</html>
+
+

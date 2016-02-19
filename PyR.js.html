@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Monkey</title>
+<style type="text/css">
+.total {
+	border: 100% solid #000;
+	position: fixed;
+	height: 800px;
+	width: 100%;
+}
+.Visor {
+	background-color: #CCC;
+	position: relative;
+	height: 30%;
+	width: 100%;
+	color: #330099;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+}
+.Respuestas {
+	width: 100%;
+	height: 101%;
+	background-color: #CFD6F1;
+}
+</style>
+<script type="text/javascript">
+var preg =["pregunta 1","pregunta 2","pregunta 3","pregunta 4","pregunta 5","pregunta 6"];
+var resp =["respuesta 1","respuesta 2","respuesta 3","respuesta 4","respuesta 5","respuesta 6"];
+var guyp = ["ee","sas","dasd"];
+var guyr = [0,1,2];
+var p1p = [0,1,2,3,4,5];
+
+/*funcion para mostrar las respuestas de guyr en el vistor de resp
+las muestra en algun elemento  con id listar
+*/
+function respuestas(){
+for (var i in guyr){
+	var nuevoElemento = "<div>"+resp[i]+"</div>";
+  	listar.innerHTML = listar.innerHTML + nuevoElemento;
+	}
+}
+
+
+function funcion(){
+var p1=p1p;
+alea= Math.floor(Math.random() * (1 + p1.length - 1));
+var res = [];
+
+document.getElementById("preg").innerHTML = preg[p1[alea]];
+document.getElementById("respu").innerHTML = resp[p1[alea]];
+}
+</script>
+</head>
+
+<body>
+
+
+<div class="total">
+
+<div class="Visor">
+<p id="preg"></p>
+</div>
+
+<div class="Respuestas">
+  <div >
+  <div id="listar">
+    <p>Respuestas:</p>
+  </div>
+  <div>
+    <input type="button" value="Respuestas" onClick="respuestas()">
+  </div>
+    </div>
+</div>
+  
+</div>
+</body>
+
+
+</html>
+
+
