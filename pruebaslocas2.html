@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<script type="text/javascript">
+var preg =["pregunta 1","pregunta 2","pregunta 3","pregunta 4","pregunta 5","pregunta 6"];
+function parrafos(){
+for (var i in preg){
+	var nuevoElemento = "<p id='elem'>"+preg[i]+"</p>";
+  	listas.innerHTML = listas.innerHTML + nuevoElemento;
+}
+function borrar(){
+var parr = document.getElementById("listas");
+parr.parentNode.removeChild(parr);
+}
+}
+
+</script>
+</head>
+
+<body>
+<p>A PARTIR DE AQUI...</p>
+<div id="listas">
+  <p id="pa">parrafo a borrar</p>
+</div>
+<input type="button" onClick="parrafos()" value="parrafos">
+<input type="button" onClick="borrar()" value="borrar">
+</body>
+</html>
